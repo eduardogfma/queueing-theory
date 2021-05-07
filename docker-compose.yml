@@ -1,0 +1,19 @@
+# docker-compose file for local development.
+# Author: Eduardo A.
+# Date 090/04/2021
+
+version: '2.4'
+
+services:
+  jupyter-notebook:
+    build:
+      context: ./
+
+    ports:
+      - 8888:8888
+
+    volumes:
+      - ./:/home/jovyan/work
+
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
